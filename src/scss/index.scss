@@ -1,0 +1,83 @@
+body {
+    margin: 0 auto;
+    text-align: center;
+    font-family: "M PLUS Rounded 1c";
+}
+
+.setting-time {
+    width: 80px;
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px #444 solid;
+    font-size: 20px;
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
+    &:hover {
+        color: white;
+        background-color: rgb(255, 225, 127);
+    }
+    &__none {
+        width: 80px;
+        display: inline-block;
+        border-radius: 10px;
+        border: 1px #444 solid;
+        font-size: 20px;
+        padding: 5px;
+        margin: 10px;
+        background-color: gray;
+    }
+}
+.timer__main {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+
+    &_display-time {
+        font-size: 70px;
+    }
+
+    &_display-bar {
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+        background-color: #F5F5F5;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+        vertical-align: bottom;
+        &::-webkit-progress-value {
+            background: rgb(18, 114, 223);
+        }
+    }
+}
+
+.button {
+    padding: 10px 50px;
+    margin: 15px;
+    font-size: 30px;
+    display: inline-block;
+    border-radius: 8px;
+    cursor: pointer;
+    &__start {
+        color: white;
+        background-color: rgb(200, 36, 36);
+        &:hover {
+            background-color: rgb(148, 36, 36);
+        }
+    }
+    &__pause {
+        color: white;
+        background-color: rgb(63, 174, 226);
+        &:hover {
+            background-color:rgb(61, 111, 202);
+        }
+    }
+    &__stop {
+        color: white;
+        background-color: gray;
+        &:hover {
+            background-color:rgb(194, 192, 192);
+        }
+    }
+}
