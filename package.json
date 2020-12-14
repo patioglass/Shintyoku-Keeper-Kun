@@ -7,8 +7,29 @@
     "start": "electron .",
     "react-dev": "webpack-dev-server --mode development",
     "react-build": "webpack --mode production",
-    "build-macOS": "electron-packager . Shintyoku-Keeper-Kun --platform=darwin --arch=x64 --overwrite --icon=src/icon.ico",
-    "build-windows": "electron-packager . Shintyoku-Keeper-Kun --platform=win32 --arch=x64 --overwrite --icon=src/icon.ico"
+    "build-macOS": "electron-builder --mac --x64",
+    "build-windows": "electron-builder --win --x64"
+  },
+  "build": {
+    "productName": "Shintyoku-Keeper-Kun",
+    "appId": "Shintyoku-Keeper-Kun.patiopatimon.com",
+    "directories": {
+      "output": "./dist"
+    },
+    "files": [
+      "./dist/*.js",
+      "./index.html",
+      "./main.js",
+      "./src/img/icon/**"
+    ],
+    "mac": {
+      "icon": "./src/img/icon.icns",
+      "target": "dmg"
+    },
+    "win": {
+      "icon": "./src/img/icon.ico",
+      "target": "msi"
+    }
   },
   "keywords": [],
   "author": "patioglass",
@@ -21,6 +42,7 @@
     "@types/webpack-dev-server": "^3.11.1",
     "css-loader": "^5.0.1",
     "electron": "^11.0.4",
+    "electron-builder": "^22.9.1",
     "electron-packager": "^15.2.0",
     "file-loader": "^6.2.0",
     "react": "^17.0.1",
