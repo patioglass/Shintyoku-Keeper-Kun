@@ -25,7 +25,12 @@ const config: Configuration = {
                     },
                     'sass-loader'
                 ]
-            }
+            },
+            {
+                // 追記
+                test: /\.(png)$/,
+                loaders: 'url-loader'
+            },
         ],
     },
     resolve: {

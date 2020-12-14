@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Timer from './Timer';
 import Setting from './Setting';
 import {Config} from '../config';
-
+import Icon from '../../../img/icon.png';
 
 export default function MainContainer() {
     const [ settingTime, setSettingTime ] = useState<number>(0);
@@ -55,8 +55,11 @@ export default function MainContainer() {
 
     return (
         <div className='wrapper'>
-            <h1>SimpleProgressBar</h1>
-            <p>時間を指定して、指定した時間のカウントダウンをprogressBarと共に実施するアプリ</p>
+            <h1>Shintyoku-Keeper-Kun</h1>
+
+            <p>指定した時間のカウントダウンを進捗バーと共に実施するアプリ</p>
+            <img src={Icon} />
+
             <hr />
             <Setting
                 timerPattern={timerPattern}
