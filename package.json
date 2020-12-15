@@ -14,7 +14,7 @@
     "productName": "Shintyoku-Keeper-Kun",
     "appId": "Shintyoku-Keeper-Kun.patiopatimon.com",
     "directories": {
-      "output": "./dist"
+      "output": "./package"
     },
     "files": [
       "./dist/*.js",
