@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Timer from './Timer';
 import Setting from './Setting';
 import {Config} from '../config';
@@ -8,6 +8,11 @@ export default function MainContainer() {
     const [ settingTime, setSettingTime ] = useState<number>(0);
     const [ timerPattern, setTimerPattern] = useState<string>('');
     const [ totalTime, setTotalTime ] = useState<number>(0);
+
+    const refSettingTime = useRef(settingTime);
+    useEffect(() => {
+        refSettingTime.current = settingTime;
+    }, [settingTime]);
 
     useEffect(() => {
         let intervalId!: NodeJS.Timeout;
@@ -34,8 +39,8 @@ export default function MainContainer() {
                 clearInterval(intervalId);
             }
         }
-    })
-   
+    }, [timerPattern])
+
     const clearSettingTime = () => {
         setTotalTime(0);
         setSettingTime(0);
@@ -43,9 +48,9 @@ export default function MainContainer() {
     }
 
     const addSettingTime = (second: number, setting: boolean = false) => {
-        setSettingTime(settingTime + second);
+        setSettingTime(refSettingTime.current + second);
         if (setting) {
-            setTotalTime(settingTime + second);
+            setTotalTime(refSettingTime.current + second);
         }
     }
 
